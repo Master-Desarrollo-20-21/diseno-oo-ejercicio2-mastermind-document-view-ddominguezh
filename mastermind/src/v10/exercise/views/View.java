@@ -2,7 +2,7 @@ package v10.exercise.views;
 
 import v10.exercise.models.Game;
 
-public class View extends SubView{
+public class View extends AbstractView{
 
 	private StartView startView;
 	private PlayView playView;
