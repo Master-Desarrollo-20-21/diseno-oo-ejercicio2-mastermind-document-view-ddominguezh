@@ -1,0 +1,72 @@
+@startuml Chess
+
+class MasterMind {}
+
+class Game {}
+class Attempt {}
+class Combination {}
+class ProposedCombination {}
+class SecretCombination {}
+
+enum Color {}
+enum Pig {}
+
+class GameView {}
+class SubView {}
+
+class View {}
+class StartView {}
+class PlayView {}
+class ResumeView {}
+
+class SecretCombinationView {}
+class AttempsCombinationView {}
+class CreateProposedCombinationView {}
+class FinishView {}
+
+class DialogYesNoView {}
+
+Combination <|-- SecretCombination
+Combination <|-- ProposedCombination
+
+SubView <|-- GameView
+SubView <|-- View
+SubView <|-- StartView
+SubView <|-- SecretCombinationView
+SubView <|-- CreateProposedCombinationView
+
+GameView <|-- PlayView
+GameView <|-- AttempsCombinationView
+GameView <|-- ResumeView
+GameView <|-- FinishView
+
+SubView <-- DialogYesNoView
+
+MasterMind *--> View
+
+View *--> StartView
+View *--> PlayView
+View *--> ResumeView
+
+PlayView *--> SecretCombinationView
+PlayView *--> FinishView
+PlayView *--> CreateProposedCombinationView
+PlayView *--> AttempsCombinationView
+
+CreateProposedCombinationView --> ProposedCombination
+
+ResumeView *--> DialogYesNoView
+
+GameView *--> Game
+Game *--> SecretCombination
+Game *--> "1, 10" Attempt
+Game ..> ProposedCombination
+
+SecretCombination ..> ProposedCombination
+SecretCombination ..> Pig
+
+Combination *--> "4" Color
+Attempt *--> ProposedCombination
+Attempt *--> "4" Pig
+
+@enduml
