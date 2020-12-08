@@ -74,12 +74,12 @@ ResumeView *--> DialogYesNoView
 ResumeView ..> Message
 
 GameView *--> Game
-Game *--> SecrectCombination
+Game *--> SecretCombination
 Game *--> "1, 10" Attempt
 Game ..> ProposedCombination
 
-SecrectCombination ..> ProposedCombination
-SecrectCombination ..> Pig
+SecretCombination ..> ProposedCombination
+SecretCombination ..> Pig
 
 Combination *--> "4" Color
 Attempt *--> ProposedCombination
