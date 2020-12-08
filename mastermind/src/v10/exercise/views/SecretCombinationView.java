@@ -3,7 +3,7 @@ package v10.exercise.views;
 import v10.exercise.models.SecretCombination;
 import v10.exercise.utils.Console;
 
-public class SecretCombinationView extends SubView{
+public class SecretCombinationView extends AbstractView{
 
 	@Override
 	public void interact() {	
