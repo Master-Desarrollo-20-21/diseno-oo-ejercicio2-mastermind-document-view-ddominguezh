@@ -11,7 +11,7 @@ public class ProposedCombination extends Combination{
 	}
 	
 	public boolean isValidLength() {
-		return this.colors.length == ProposedCombination.getWidth();
+		return this.colors.length == ProposedCombination.getLength();
 	}
 	
 	public boolean isValidColors() {
@@ -35,7 +35,6 @@ public class ProposedCombination extends Combination{
     		return false;
     }
 
-	@Override
 	public String toString() {
 		String result = "";
 		for(Color color : this.colors) {

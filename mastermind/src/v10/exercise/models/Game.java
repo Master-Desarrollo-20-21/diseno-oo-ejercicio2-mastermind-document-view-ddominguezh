@@ -23,10 +23,9 @@ public class Game {
 	public int getNumAttempts() {
 		return this.numAttempts;
 	}
-
-	public String getResult(int i) {
-		assert(i >= 0 && i < MAX_ATTEMTPS);
-		return this.attempts[i].getResult();
+	
+	public Attempt[] getAttempts() {
+		return this.attempts;
 	}
 
 	public void add(ProposedCombination proposed) {
@@ -46,5 +45,5 @@ public class Game {
 		assert(this.numAttempts >= 1 && this.numAttempts < MAX_ATTEMTPS);
 		return this.attempts[this.numAttempts - 1];
 	}
-	
+
 }

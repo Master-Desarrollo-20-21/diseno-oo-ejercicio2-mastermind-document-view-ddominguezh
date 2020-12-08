@@ -12,7 +12,7 @@ public class SecretCombination extends Combination{
 	public void generate() {
 		List<Color> values = Arrays.asList(Color.values());
 	    Collections.shuffle(values);
-	    this.colors = new Color[SecretCombination.getWidth()];
+	    this.colors = new Color[SecretCombination.getLength()];
 		for( int i = 0 ; i < this.colors.length ; i++) {
 			this.colors[i] = values.get(i);
 		}

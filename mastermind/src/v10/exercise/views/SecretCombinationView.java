@@ -8,7 +8,7 @@ public class SecretCombinationView extends AbstractView{
 	@Override
 	public void interact() {	
 		String result = "";
-		for(int i = 0 ; i < SecretCombination.getWidth(); i++ ) {
+		for(int i = 0 ; i < SecretCombination.getLength(); i++ ) {
 			result += "x";
 		}
 		Console.getInstance().write(result);

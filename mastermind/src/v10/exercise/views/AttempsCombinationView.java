@@ -1,18 +1,19 @@
-package v10.exercise.views;
+	package v10.exercise.views;
 
-import v10.exercise.models.Game;
+import v10.exercise.models.Attempt;
 import v10.exercise.utils.Console;
 
-public class AttempsCombinationView extends GameView {
+public class AttempsCombinationView extends AbstractView {
 
-	public AttempsCombinationView(Game game) {
-		super(game);
+	private Attempt[] attemps;
+	public AttempsCombinationView(Attempt[] attemps) {
+		this.attemps = attemps;
 	}
 
 	@Override
 	public void interact() {
-		for(int i = 0 ; i < this.game.getNumAttempts() ; i++ ) {
-			Console.getInstance().write(this.game.getResult(i));
+		for(int i = 0 ; i < attemps.length ; i++ ) {
+			Console.getInstance().write(attemps[i].getResult());
 		}
 	}
 

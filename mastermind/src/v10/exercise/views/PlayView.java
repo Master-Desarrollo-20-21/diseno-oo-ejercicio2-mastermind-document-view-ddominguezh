@@ -7,16 +7,9 @@ import v6.exercise.Console;
 public class PlayView extends GameView{
 
 	private SecretCombinationView secretCombinationView;
-	private FinishView finishView;
-	private CreateProposedCombinationView createProposedCombinationView;
-	private AttempsCombinationView attempsCombinationView;
-	
 	public PlayView(Game game) {
 		super(game);
 		this.secretCombinationView = new SecretCombinationView();
-		this.finishView = new FinishView(game);
-		this.attempsCombinationView = new AttempsCombinationView(this.game);
-		this.createProposedCombinationView = new CreateProposedCombinationView();
 	}
 
 	@Override
@@ -24,11 +17,12 @@ public class PlayView extends GameView{
 		do {
 			Console.getInstance().write(Message.ATTEMPT.replace(this.game.getNumAttempts()));
 			this.secretCombinationView.interact();
-			this.attempsCombinationView.interact();
-			this.createProposedCombinationView.interact();
-			this.game.add(this.createProposedCombinationView.getProposed());
+			new AttempsCombinationView(this.game.getAttempts()).interact();
+			CreateProposedCombinationView createProposedCombinationView = new CreateProposedCombinationView();
+			createProposedCombinationView.interact();
+			this.game.add(createProposedCombinationView.getProposed());
 		}while(!this.game.finish());
-		this.finishView.interact();
+		new FinishView(game.isWinner()).interact();
 	}
 
 }

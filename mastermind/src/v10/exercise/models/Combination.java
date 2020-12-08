@@ -7,7 +7,7 @@ public class Combination {
 	private static int COLORS_LENGTH = 4;
 	protected Color[] colors; 
 	
-	public static int getWidth() {
+	public static int getLength() {
 		return COLORS_LENGTH;
 	}
 	
