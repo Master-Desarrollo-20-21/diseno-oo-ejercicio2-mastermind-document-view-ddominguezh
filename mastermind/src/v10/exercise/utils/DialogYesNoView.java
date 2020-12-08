@@ -2,7 +2,7 @@ package v10.exercise.utils;
 
 import v10.exercise.views.SubView;
 
-public class DialogYesNoView extends SubView{
+public class DialogYesNoView extends AbstractView{
 
 	private static enum VALID_CHARATERS{
 		YES("Y"),
