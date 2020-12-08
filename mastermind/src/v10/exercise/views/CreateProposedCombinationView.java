@@ -5,7 +5,7 @@ import v10.exercise.utils.Message;
 import v10.exercise.models.Color;
 import v10.exercise.models.ProposedCombination;
 
-public class CreateProposedCombinationView extends SubView {
+public class CreateProposedCombinationView extends AbstractView {
 
 	private ProposedCombination proposed;
 	
