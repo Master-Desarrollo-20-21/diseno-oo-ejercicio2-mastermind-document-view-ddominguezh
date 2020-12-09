@@ -25,7 +25,7 @@ public class Game {
 	}
 	
 	public Attempt[] getAttempts() {
-		return this.attempts;
+		return Arrays.copyOfRange(this.attempts, 0, this.numAttempts);
 	}
 
 	public void add(ProposedCombination proposed) {
